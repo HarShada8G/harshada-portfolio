@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harshada Ghube — Builder & Performer</title>
+<meta name="description" content="Harshada Ghube — Computer Science & Business student at IIIT Lucknow. Full-stack developer, competitive programmer, and stage/arts volunteer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#10141b;
+    --bg2:#161c27;
+    --panel:#f4efe1;
+    --panel-line:#dcd4bd;
+    --ink:#eee9dd;
+    --ink-dark:#1b1f27;
+    --muted:#8b96a8;
+    --muted-dark:#6b6455;
+    --amber:#e8a33d;
+    --teal:#5fa88c;
+    --line: rgba(238,233,221,0.13);
+    --serif: 'Fraunces', serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Inter', sans-serif;
+    --maxw: 1080px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  ::selection{background:var(--amber); color:var(--ink-dark);}
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* NAV */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(16,20,27,0.78);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .mark{
+    font-family:var(--mono); font-size:14px; letter-spacing:0.04em; color:var(--amber);
+    text-decoration:none;
+  }
+  .nav-links{display:flex; gap:28px; list-style:none;}
+  .nav-links a{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--muted); text-decoration:none; transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  @media (max-width:640px){ .nav-links{gap:16px;} .nav-links a{font-size:11px;} }
+
+  /* HERO */
+  .hero{
+    padding:168px 0 0;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--teal); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:22px; height:1px; background:var(--teal); display:inline-block;}
+  h1.name{
+    font-family:var(--serif); font-optical-sizing:auto;
+    font-weight:600;
+    font-size:clamp(46px, 9vw, 92px);
+    line-height:0.98;
+    letter-spacing:-0.01em;
+    max-width:900px;
+  }
+  .tagline{
+    margin-top:26px;
+    max-width:560px;
+    font-size:18px;
+    color:var(--muted);
+    font-weight:400;
+  }
+  .hero-cta{
+    margin-top:38px;
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+  .btn{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.03em;
+    padding:13px 22px;
+    border-radius:3px;
+    text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease;
+    cursor:pointer; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--amber); color:var(--ink-dark);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--line); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--amber); color:var(--amber); transform:translateY(-2px);}
+
+  /* TICKER */
+  .ticker-wrap{
+    margin-top:80px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--bg2);
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  .ticker{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.04em;
+    color:var(--muted);
+    padding:13px 0;
+    animation:scroll-left 32s linear infinite;
+  }
+  .ticker span{color:var(--amber); margin:0 4px;}
+  .ticker em{color:var(--ink); font-style:normal;}
+  @keyframes scroll-left{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+
+  section{padding:120px 0;}
+  .section-head{margin-bottom:56px;}
+  .kicker{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:14px;
+  }
+  h2{
+    font-family:var(--serif); font-weight:600;
+    font-size:clamp(30px, 4vw, 44px);
+    letter-spacing:-0.01em;
+  }
+  .lede{color:var(--muted); max-width:600px; margin-top:14px; font-size:16px;}
+
+  /* reveal on scroll */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+
+  /* ABOUT / DUALITY */
+  .duality{
+    display:grid; grid-template-columns:1fr 1fr; gap:22px;
+  }
+  @media (max-width:800px){ .duality{grid-template-columns:1fr;} }
+  .duality .card{
+    border-radius:6px; padding:34px;
+    border:1px solid var(--line);
+  }
+  .card-terminal{background:var(--bg2);}
+  .card-stage{background:var(--panel); color:var(--ink-dark);}
+  .card-label{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    margin-bottom:14px; display:block;
+  }
+  .card-terminal .card-label{color:var(--teal);}
+  .card-stage .card-label{color:#a3672a;}
+  .card h3{font-family:var(--serif); font-size:24px; font-weight:600; margin-bottom:14px;}
+  .card p{font-size:15px; line-height:1.65;}
+  .card-terminal p{color:var(--muted);}
+  .card-stage p{color:var(--muted-dark);}
+
+  .edu-list{margin-top:20px; display:flex; flex-direction:column; gap:14px;}
+  .edu-row{
+    display:flex; justify-content:space-between; gap:16px;
+    padding-bottom:12px; border-bottom:1px solid var(--panel-line);
+    font-size:14px;
+  }
+  .card-terminal .edu-row{border-color:var(--line);}
+  .edu-row:last-child{border-bottom:none;}
+  .edu-year{font-family:var(--mono); color:var(--amber); font-size:12.5px; white-space:nowrap;}
+
+  .stub-list{margin-top:18px; display:flex; flex-direction:column; gap:12px;}
+  .stub{
+    display:flex; align-items:baseline; gap:10px;
+    font-size:14.5px;
+  }
+  .stub b{font-weight:600;}
+  .stub .dates{font-family:var(--mono); font-size:11.5px; color:#a3672a; margin-left:auto; white-space:nowrap;}
+
+  /* SKILLS */
+  .skill-groups{display:flex; flex-direction:column; gap:26px;}
+  .skill-row{display:grid; grid-template-columns:160px 1fr; gap:18px; align-items:start; padding:18px 0; border-top:1px solid var(--line);}
+  @media (max-width:640px){ .skill-row{grid-template-columns:1fr;} }
+  .skill-row-label{font-family:var(--mono); font-size:12.5px; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted);}
+  .chips{display:flex; flex-wrap:wrap; gap:9px;}
+  .chip{
+    font-family:var(--mono); font-size:13px;
+    padding:7px 13px; border:1px solid var(--line); border-radius:20px;
+    color:var(--ink); transition:border-color .2s, color .2s;
+  }
+  .chip:hover{border-color:var(--amber); color:var(--amber);}
+
+  /* PROJECTS */
+  .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:800px){ .proj-grid{grid-template-columns:1fr;} }
+  .proj-card{
+    background:var(--bg2);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:30px;
+    cursor:pointer;
+    text-align:left;
+    color:var(--ink);
+    transition:transform .25s ease, border-color .25s ease, background .25s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .proj-card:hover{transform:translateY(-4px); border-color:var(--amber); background:#1b2230;}
+  .proj-date{font-family:var(--mono); font-size:11.5px; color:var(--teal); letter-spacing:0.05em;}
+  .proj-card h3{font-family:var(--serif); font-size:23px; font-weight:600; margin:12px 0 12px; line-height:1.2;}
+  .proj-card p{color:var(--muted); font-size:14.5px; margin-bottom:18px;}
+  .proj-tags{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:8px;}
+  .tag{font-family:var(--mono); font-size:11px; color:var(--muted); border:1px solid var(--line); border-radius:3px; padding:3px 8px;}
+  .proj-link-row{margin-bottom:14px;}
+  .proj-link{
+    font-family:var(--mono); font-size:12px; color:var(--teal);
+    text-decoration:none; border:1px solid var(--line); border-radius:3px;
+    padding:6px 12px; display:inline-flex; align-items:center; gap:6px;
+    transition:border-color .2s, color .2s;
+  }
+  .proj-link:hover{border-color:var(--teal); color:#7dc4a8;}
+  .proj-more{font-family:var(--mono); font-size:12.5px; color:var(--amber); display:inline-flex; align-items:center; gap:6px; margin-top:6px;}
+  .proj-more::after{content:'→'; transition:transform .2s;}
+  .proj-card:hover .proj-more::after{transform:translateX(4px);}
+
+  /* ACHIEVEMENTS scoreboard */
+  .score-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
+  @media (max-width:800px){ .score-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .score-grid{grid-template-columns:1fr;} }
+  .score-card{
+    border:1px dashed var(--line);
+    border-radius:6px;
+    padding:22px;
+    background:var(--bg2);
+  }
+  .score-label{font-family:var(--mono); font-size:11.5px; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted);}
+  .score-value{font-family:var(--serif); font-size:32px; font-weight:600; color:var(--amber); margin:8px 0 6px;}
+  .score-detail{font-size:13px; color:var(--muted);}
+
+  /* BEYOND THE CODE - ticket stubs */
+  .ticket-row{display:flex; flex-direction:column; gap:16px;}
+  .ticket{
+    display:grid; grid-template-columns:130px 1fr;
+    background:var(--panel); color:var(--ink-dark);
+    border-radius:6px; overflow:hidden;
+    border:1px solid var(--panel-line);
+  }
+  @media (max-width:600px){ .ticket{grid-template-columns:1fr;} }
+  .ticket-stub{
+    background:#e9e0c8;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:20px 10px;
+    border-right:1px dashed #b9ad8c;
+    font-family:var(--mono);
+  }
+  @media (max-width:600px){ .ticket-stub{border-right:none; border-bottom:1px dashed #b9ad8c; flex-direction:row; gap:8px; padding:12px;} }
+  .ticket-stub .soc{font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#a3672a;}
+  .ticket-stub .yr{font-size:12px; color:var(--muted-dark); margin-top:4px;}
+  .ticket-body{padding:22px 26px;}
+  .ticket-body h4{font-family:var(--serif); font-size:19px; font-weight:600; margin-bottom:6px;}
+  .ticket-body p{font-size:14px; color:var(--muted-dark);}
+
+  /* CONTACT */
+  .contact-section{
+    background:var(--bg2);
+    border-top:1px solid var(--line);
+  }
+  .contact-inner{text-align:center; max-width:640px; margin:0 auto;}
+  .contact-inner h2{margin-bottom:16px;}
+  .contact-inner p{color:var(--muted); font-size:16px; margin-bottom:36px;}
+  .contact-links{
+    display:flex; justify-content:center; flex-wrap:wrap; gap:14px;
+  }
+  .clink{
+    font-family:var(--mono); font-size:13.5px;
+    padding:12px 20px; border:1px solid var(--line); border-radius:3px;
+    text-decoration:none; color:var(--ink);
+    transition:border-color .2s, color .2s, transform .2s;
+    background:none; cursor:pointer;
+  }
+  .clink:hover{border-color:var(--amber); color:var(--amber); transform:translateY(-2px);}
+
+  footer{
+    text-align:center; padding:34px 0; font-family:var(--mono); font-size:11.5px; color:var(--muted);
+  }
+
+  /* MODAL */
+  .modal-backdrop{
+    position:fixed; inset:0; background:rgba(10,12,16,0.72);
+    display:none; align-items:flex-start; justify-content:center;
+    padding:90px 20px 40px; z-index:200; overflow-y:auto;
+    backdrop-filter:blur(3px);
+  }
+  .modal-backdrop.open{display:flex;}
+  .modal{
+    background:var(--bg2); border:1px solid var(--line); border-radius:8px;
+    max-width:640px; width:100%; padding:38px;
+    animation:pop-in .25s ease;
+  }
+  @keyframes pop-in{ from{opacity:0; transform:translateY(14px) scale(.98);} to{opacity:1; transform:translateY(0) scale(1);} }
+  .modal-top{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:6px;}
+  .modal-close{
+    background:none; border:1px solid var(--line); color:var(--muted);
+    width:32px; height:32px; border-radius:50%; cursor:pointer; flex-shrink:0;
+    font-family:var(--mono); font-size:15px;
+    transition:border-color .2s, color .2s;
+  }
+  .modal-close:hover{color:var(--amber); border-color:var(--amber);}
+  .modal h3{font-family:var(--serif); font-size:27px; font-weight:600; margin-bottom:4px;}
+  .modal .modal-date{font-family:var(--mono); font-size:12px; color:var(--teal);}
+  .modal ul{margin:20px 0; padding-left:18px; display:flex; flex-direction:column; gap:9px;}
+  .modal ul li{font-size:14.5px; color:var(--muted); line-height:1.55;}
+  .modal .proj-tags{margin-top:18px;}
+
+  /* toast */
+  .toast{
+    position:fixed; bottom:26px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--amber); color:var(--ink-dark); font-family:var(--mono); font-size:13px;
+    padding:12px 20px; border-radius:4px; opacity:0; pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease; z-index:300;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="mark">HG / 08</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <p class="eyebrow">B.Tech · Computer Science &amp; Business — IIIT Lucknow</p>
+    <h1 class="name">Harshada<br>Ghube</h1>
+    <p class="tagline">I write the code that dispatches help in an emergency, and I show up backstage when the curtain needs pulling. Full-stack builder, competitive programmer, and a fairly reliable volunteer.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">See the work</a>
+      <a href="mailto:ghubeharshada@gmail.com" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </section>
+
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker" id="tickerTrack"></div>
+  </div>
+
+  <!-- ABOUT / DUALITY -->
+  <section id="story" class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Two Stages</p>
+      <h2>Terminal by day, greenroom by night</h2>
+      <p class="lede">Second-year CS &amp; Business student at IIIT Lucknow — most days split between a code editor and a rehearsal room.</p>
+    </div>
+
+    <div class="duality reveal">
+      <div class="card card-terminal">
+        <span class="card-label">// In the terminal</span>
+        <h3>Building systems that hold up</h3>
+        <p>I work across the stack — from Spring Boot services with MySQL underneath, to React front-ends and FastAPI/WebSocket layers for real-time systems. I like problems with a clear failure mode: dispatch systems, inventory logic, auth flows — things that need to just work.</p>
+        <div class="edu-list">
+          <div class="edu-row"><span>Indian Institute of Information Technology, Lucknow — B.Tech CSB, CGPA 8.15</span><span class="edu-year">2025–29</span></div>
+          <div class="edu-row"><span>Bhimashankar Padalkar School — Class XII (PCM), 83.13%</span><span class="edu-year">2025</span></div>
+          <div class="edu-row"><span>Shahid Bhagat Singh School — Class X, 91.0%</span><span class="edu-year">2023</span></div>
+        </div>
+      </div>
+
+      <div class="card card-stage">
+        <span class="card-label">// Off script</span>
+        <h3>Showing up for the arts</h3>
+        <p>Outside the codebase, I volunteer across three college societies — theatre, visual art, and photography. It's a different kind of problem-solving: less about edge cases, more about timing, teamwork, and getting a shot or a scene right in one take.</p>
+        <div class="stub-list">
+          <div class="stub"><b>Goonj</b> — Drama Society <span class="dates">Sept'25 – Present</span></div>
+          <div class="stub"><b>Utkrisht</b> — Art Society <span class="dates">Nov'25 – Present</span></div>
+          <div class="stub"><b>AfterDark</b> — Photography Society <span class="dates">Nov'25 – Present</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Toolkit</p>
+      <h2>What I build with</h2>
+    </div>
+    <div class="skill-groups reveal">
+      <div class="skill-row">
+        <span class="skill-row-label">Languages</span>
+        <div class="chips">
+          <span class="chip">C++</span><span class="chip">Python</span><span class="chip">C</span><span class="chip">Java</span>
+          <span class="chip">JavaScript</span><span class="chip">SQL</span><span class="chip">Bash</span><span class="chip">HTML</span><span class="chip">CSS</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-row-label">Frameworks</span>
+        <div class="chips">
+          <span class="chip">Node.js</span><span class="chip">Spring</span><span class="chip">Spring Boot</span><span class="chip">React.js</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-row-label">Tools</span>
+        <div class="chips">
+          <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">MySQL</span><span class="chip">VS Code</span>
+          <span class="chip">Google Colab</span><span class="chip">Figma</span><span class="chip">Vercel</span><span class="chip">IntelliJ IDEA</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-row-label">Platforms</span>
+        <div class="chips">
+          <span class="chip">Windows</span><span class="chip">Linux</span><span class="chip">AWS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="work" class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Selected Work</p>
+      <h2>Projects</h2>
+      <p class="lede">Click a project for the full breakdown.</p>
+    </div>
+    <div class="proj-grid reveal">
+
+      <div class="proj-card" data-modal="valora" tabindex="0" role="button" aria-label="View VALORA details">
+        <span class="proj-date">April 2026</span>
+        <h3>VALORA</h3>
+        <p>Precision distress-signalling and emergency dispatch network — an AI-based emergency detection system using biometric gestures and voice triggers.</p>
+        <div class="proj-tags">
+          <span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">WebSockets</span><span class="tag">MediaPipe</span>
+        </div>
+        <div class="proj-link-row">
+          <a href="https://github.com/HarShada8G/zenith" target="_blank" rel="noopener" class="proj-link" onclick="event.stopPropagation()">GitHub ↗</a>
+        </div>
+        <span class="proj-more">View details</span>
+      </div>
+
+      <div class="proj-card" data-modal="apheresis" tabindex="0" role="button" aria-label="View APHERESIS details">
+        <span class="proj-date">May 2026</span>
+        <h3>APHERESIS</h3>
+        <p>A Blood Bank Management System built with a team — handling donors, blood inventory, and request processing end to end.</p>
+        <div class="proj-tags">
+          <span class="tag">Spring Boot</span><span class="tag">Spring Data JPA</span><span class="tag">MySQL</span>
+        </div>
+        <div class="proj-link-row">
+          <a href="http://3.108.228.20/" target="_blank" rel="noopener" class="proj-link" onclick="event.stopPropagation()">Live Site ↗</a>
+        </div>
+        <span class="proj-more">View details</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Scoreboard</p>
+      <h2>Competitive programming &amp; wins</h2>
+    </div>
+    <div class="score-grid reveal">
+      <div class="score-card">
+        <span class="score-label">Codeforces</span>
+        <div class="score-value">871</div>
+        <p class="score-detail">Newbie · 100+ problems solved</p>
+      </div>
+      <div class="score-card">
+        <span class="score-label">CodeChef</span>
+        <div class="score-value">1423</div>
+        <p class="score-detail">2★ rating · 400+ problems solved</p>
+      </div>
+      <div class="score-card">
+        <span class="score-label">LeetCode</span>
+        <div class="score-value">harshe008</div>
+        <p class="score-detail">DSA across data structures &amp; DP</p>
+      </div>
+      <div class="score-card">
+        <span class="score-label">Total problems solved</span>
+        <div class="score-value">500+</div>
+        <p class="score-detail">Across competitive platforms</p>
+      </div>
+      <div class="score-card">
+        <span class="score-label">GSSoC '26</span>
+        <div class="score-value">Top 3%</div>
+        <p class="score-detail">14+ PRs &amp; reviews, open-source</p>
+      </div>
+      <div class="score-card">
+        <span class="score-label">SqueriQuest CTF</span>
+        <div class="score-value">Top 20</div>
+        <p class="score-detail">CTF at IIIT Lucknow</p>
+      </div>
+      <div class="score-card">
+        <span class="score-label">JEE Advanced</span>
+        <div class="score-value">2025</div>
+        <p class="score-detail">Cleared · JEE Main 1.9 percentile</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Recognitions</p>
+      <h2>Certifications &amp; selections</h2>
+    </div>
+    <div class="score-grid reveal">
+      <div class="score-card">
+        <span class="score-label">ICPC</span>
+        <div class="score-value">AlgoQueen</div>
+        <p class="score-detail">Certificate of participation</p>
+      </div>
+      <div class="score-card">
+        <span class="score-label">Aspire for Her</span>
+        <div class="score-value">Certified</div>
+        <p class="score-detail">Program for women in tech</p>
+      </div>
+      <div class="score-card">
+        <span class="score-label">Flipkart GRID 8.0</span>
+        <div class="score-value">Round 2</div>
+        <p class="score-detail">Selected — national tech competition</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND THE CODE -->
+  <section class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Positions of Responsibility</p>
+      <h2>Beyond the code</h2>
+    </div>
+    <div class="ticket-row reveal">
+      <div class="ticket">
+        <div class="ticket-stub"><span class="soc">Goonj</span><span class="yr">Sept'25–</span></div>
+        <div class="ticket-body">
+          <h4>Volunteer, Drama Society</h4>
+          <p>Contributed to theatre performances and event preparations, improving stage presence and teamwork.</p>
+        </div>
+      </div>
+      <div class="ticket">
+        <div class="ticket-stub"><span class="soc">Utkrisht</span><span class="yr">Nov'25–</span></div>
+        <div class="ticket-body">
+          <h4>Volunteer, Art Society</h4>
+          <p>Worked on arts-related activities and collaborative projects, improving creativity and teamwork.</p>
+        </div>
+      </div>
+      <div class="ticket">
+        <div class="ticket-stub"><span class="soc">AfterDark</span><span class="yr">Nov'25–</span></div>
+        <div class="ticket-body">
+          <h4>Volunteer, Photography Society</h4>
+          <p>Covered college events through photography and videography for society archives and promotions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="wrap contact-inner reveal">
+      <p class="kicker" style="text-align:center;">Let's talk</p>
+      <h2>Have a project, a role, or a stage that needs crew?</h2>
+      <p>I check email faster than I check anything else.</p>
+      <div class="contact-links">
+        <button class="clink" id="copyEmail">ghubeharshada@gmail.com</button>
+        <a class="clink" href="tel:+918788022203">+91 878-802-2203</a>
+        <a class="clink" href="https://github.com/HarShada8G" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="clink" href="https://linkedin.com/in/harshada-ghube" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Harshada Ghube — built from scratch, hosted under her own name.</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" role="dialog" aria-modal="true" id="modalContent">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<div class="toast" id="toast">Email copied to clipboard</div>
+
+<script>
+  // ticker content, duplicated for seamless loop
+  const tickerItems = `<span>◆</span> CODEFORCES <em>909</em> &nbsp; <span>◆</span> CODECHEF 2★ <em>1423</em> &nbsp; <span>◆</span> LEETCODE <em>harshe008</em> &nbsp; <span>◆</span> <em>500+</em> PROBLEMS SOLVED &nbsp; <span>◆</span> GSSOC'26 <em>TOP 3%</em> &nbsp; <span>◆</span> SQUERIQUEST <em>TOP 20</em> &nbsp; <span>◆</span> JEE ADVANCED <em>2025 CLEARED</em> &nbsp; <span>◆</span> ICPC <em>ALGOQUEEN</em> &nbsp; <span>◆</span> FLIPKART GRID 8.0 <em>ROUND 2</em> &nbsp; `;
+  document.getElementById('tickerTrack').innerHTML = tickerItems.repeat(2);
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // project data + modal
+  const projects = {
+    valora: {
+      title: 'VALORA',
+      date: 'April 2026 — Precision Distress-Signalling & Emergency Dispatch Network',
+      points: [
+        'Built an AI-based emergency detection system using biometric gestures and voice triggers.',
+        'Implemented a MediaPipe-based hand-locking mechanism for secure SOS control.',
+        'Developed a WebSocket-based police dispatch system for real-time emergency alerts.',
+        'Designed a privacy-first, low-latency architecture using on-device processing.'
+      ],
+      tags: ['React', 'Vite', 'Python', 'FastAPI', 'WebSockets', 'Google MediaPipe', 'WebKit Speech Recognition API'],
+      link: { label: 'View on GitHub ↗', url: 'https://github.com/HarShada8G/zenith' }
+    },
+    apheresis: {
+      title: 'APHERESIS',
+      date: 'May 2026 — Blood Bank Management System',
+      points: [
+        'Collaborated with a team to build a system for managing donors, blood inventory, and request processing.',
+        'Developed the Spring Boot service layer with MySQL integration.',
+        'Implemented validation, authentication, and exception handling.',
+        'Designed a modular CRUD architecture using Spring Data JPA.'
+      ],
+      tags: ['Java', 'Spring Boot', 'Spring Data JPA', 'Hibernate', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Maven'],
+      link: { label: 'View Live Site ↗', url: 'http://3.108.228.20/' }
+    }
+  };
+
+  const backdrop = document.getElementById('modalBackdrop');
+  const modalContent = document.getElementById('modalContent');
+
+  function openModal(key){
+    const p = projects[key];
+    if(!p) return;
+    modalContent.innerHTML = `
+      <div class="modal-top">
+        <div>
+          <h3>${p.title}</h3>
+          <span class="modal-date">${p.date}</span>
+        </div>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close">×</button>
+      </div>
+      <ul>${p.points.map(pt => `<li>${pt}</li>`).join('')}</ul>
+      <div class="proj-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <div class="proj-link-row" style="margin-top:20px;">
+        <a href="${p.link.url}" target="_blank" rel="noopener" class="proj-link">${p.link.label}</a>
+      </div>
+    `;
+    backdrop.classList.add('open');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', () => openModal(btn.getAttribute('data-modal')));
+    btn.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openModal(btn.getAttribute('data-modal'));
+      }
+    });
+  });
+  backdrop.addEventListener('click', (e) => { if(e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+  // copy email toast
+  const toast = document.getElementById('toast');
+  document.getElementById('copyEmail').addEventListener('click', () => {
+    navigator.clipboard.writeText('ghubeharshada@gmail.com').then(() => {
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2200);
+    });
+  });
+</script>
+
+</body>
+</html>
