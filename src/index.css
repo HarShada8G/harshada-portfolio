@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'Menlo', monospace;
+}
+
+@layer base {
+  :root {
+    --void: #0d0e15;
+    --surface: #11131d;
+    --surface-light: #171a26;
+
+    --arch-cyan: #1793d1;
+    --terminal-green: #00ff66;
+    --neon-purple: #9d4edd;
+    --alert-coral: #ff5555;
+
+    --text-primary: #f5f7ff;
+    --text-secondary: #8f96a8;
+    --border: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Themes */
+  :root[data-theme='hyprland'] {
+    --void: #11111b;
+    --surface: #181825;
+    --surface-light: #1e1e2e;
+    --arch-cyan: #89b4fa;
+    --terminal-green: #a6e3a1;
+    --neon-purple: #cba6f7;
+    --alert-coral: #f38ba8;
+    --text-primary: #cdd6f4;
+    --text-secondary: #a6adc8;
+  }
+
+  :root[data-theme='dracula'] {
+    --void: #282a36;
+    --surface: #44475a;
+    --surface-light: #6272a4;
+    --arch-cyan: #8be9fd;
+    --terminal-green: #50fa7b;
+    --neon-purple: #bd93f9;
+    --alert-coral: #ff5555;
+    --text-primary: #f8f8f2;
+    --text-secondary: #bfbfbf;
+  }
+
+  :root[data-theme='nord'] {
+    --void: #2e3440;
+    --surface: #3b4252;
+    --surface-light: #434c5e;
+    --arch-cyan: #88c0d0;
+    --terminal-green: #a3be8c;
+    --neon-purple: #b48ead;
+    --alert-coral: #bf616a;
+    --text-primary: #eceff4;
+    --text-secondary: #d8dee9;
+  }
+
+  body {
+    background-color: var(--void);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    margin: 0;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(17, 19, 29, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+
+  .border-glow {
+    box-shadow: 0 0 15px currentColor;
+  }
+  
+  .crt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+    background-size: 100% 4px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--arch-cyan);
+}
