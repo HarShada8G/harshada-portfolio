@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-2 text-glow"
           >
-            Harshada Ruprao Ghube
+            Harshada Ghube
           </motion.h1>
           
           <motion.h2 
@@ -92,7 +92,8 @@ export const Hero: React.FC = () => {
               <Code className="w-5 h-5" />
               <span className="hidden sm:inline font-mono text-sm">HarShada8G</span>
             </a>
-            <a href="https://linkedin.com/in/harshada-ghube" target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/harshada-ghube-5302a0381/
+              " target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors flex items-center gap-2">
               <Briefcase className="w-5 h-5" />
               <span className="hidden sm:inline font-mono text-sm">harshada-ghube</span>
             </a>
