@@ -100,9 +100,9 @@ export const Hero: React.FC = () => {
               <Mail className="w-5 h-5" />
               <span className="hidden sm:inline font-mono text-sm">Email</span>
             </a>
-            <a href="https://leetcode.com/u/harshe008/" target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors flex items-center gap-2">
+            <a href="https://leetcode.com/u/Harshe008/" target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors flex items-center gap-2">
               <Code2 className="w-5 h-5" />
-              <span className="hidden sm:inline font-mono text-sm">harshe008</span>
+              <span className="hidden sm:inline font-mono text-sm">Harshe008</span>
             </a>
           </motion.div>
         </div>
