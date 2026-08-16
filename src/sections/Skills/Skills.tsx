@@ -89,7 +89,7 @@ export const Skills: React.FC = () => {
                   <span className="text-[var(--text-secondary)] text-xs">PRIMARY</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['C++', 'Python', 'C', 'Java', 'JavaScript', 'SQL', 'Bash'].map(skill => (
+                  {['C++', 'Python', 'C', 'JavaScript', 'SQL', 'Java'].map(skill => (
                     <span key={skill} className="px-2 py-1 border border-[var(--border)] bg-[var(--surface-light)] text-[var(--text-primary)]">{skill}</span>
                   ))}
                 </div>
@@ -101,7 +101,7 @@ export const Skills: React.FC = () => {
                   <span className="text-[var(--text-secondary)] text-xs">FREQUENT</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['React.js', 'Node.js', 'Spring Boot', 'FastAPI'].map(skill => (
+                  {['React.js', 'Node.js', 'FastAPI'].map(skill => (
                     <span key={skill} className="px-2 py-1 border border-[var(--border)] bg-[var(--surface-light)] text-[var(--text-primary)]">{skill}</span>
                   ))}
                 </div>
@@ -113,7 +113,7 @@ export const Skills: React.FC = () => {
                   <span className="text-[var(--text-secondary)] text-xs">WORKING KNOWLEDGE</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['Windows', 'AWS', 'Linux'].map(skill => (
+                  {['Windows', 'Linux'].map(skill => (
                     <span key={skill} className="px-2 py-1 border border-[var(--border)] bg-[var(--surface-light)] text-[var(--text-primary)]">{skill}</span>
                   ))}
                 </div>
@@ -125,7 +125,7 @@ export const Skills: React.FC = () => {
                   <span className="text-[var(--text-secondary)] text-xs">FREQUENT</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['Git', 'GitHub', 'MySQL', 'VS Code', 'Google Colab', 'Figma', 'Vercel', 'IntelliJ IDEA'].map(skill => (
+                  {['Git', 'GitHub', 'MySQL', 'VS Code', 'Figma', 'Vercel', 'IntelliJ IDEA'].map(skill => (
                     <span key={skill} className="px-2 py-1 border border-[var(--border)] bg-[var(--surface-light)] text-[var(--text-primary)]">{skill}</span>
                   ))}
                 </div>
