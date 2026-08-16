@@ -14,7 +14,7 @@ export const SystemStatus: React.FC = () => {
         
         <div className="flex items-center gap-2">
           <span className="text-[var(--text-primary)]">OS</span>
-          <span>{theme === 'linux' ? 'Linux' : theme}</span>
+          <span>{theme === 'windows' ? 'Windows' : theme}</span>
         </div>
 
         <div className="flex items-center gap-2">
