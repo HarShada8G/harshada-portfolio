@@ -32,7 +32,7 @@ export const Skills: React.FC = () => {
                   
                   <div className="grid grid-cols-[100px_1fr] gap-2 mb-6">
                     <span className="text-[var(--arch-cyan)] font-bold">OS</span>
-                    <span>Linux / Windows</span>
+                    <span>Windows / Linux</span>
                     
                     <span className="text-[var(--arch-cyan)] font-bold">KERNEL</span>
                     <span>C++ / C / Bash</span>
@@ -113,7 +113,7 @@ export const Skills: React.FC = () => {
                   <span className="text-[var(--text-secondary)] text-xs">WORKING KNOWLEDGE</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['Linux', 'AWS', 'Windows'].map(skill => (
+                  {['Windows', 'AWS', 'Linux'].map(skill => (
                     <span key={skill} className="px-2 py-1 border border-[var(--border)] bg-[var(--surface-light)] text-[var(--text-primary)]">{skill}</span>
                   ))}
                 </div>
