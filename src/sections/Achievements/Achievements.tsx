@@ -6,7 +6,7 @@ const COMP_STATS = [
   { platform: 'CODECHEF', value: '1423', sub: '2★ rating - 450+ problems solved' },
   { platform: 'LEETCODE', value: 'Harshe008', sub: 'DSA across data structures & DP' },
   { platform: 'TOTAL PROBLEMS SOLVED', value: '500+', sub: 'Across competitive platforms' },
-  { platform: "GSSOC '26", value: 'Top 2%', sub: '40+ PRs & reviews, open-source' },
+  { platform: "GSSOC '26", value: 'Top 2%', sub: 'Resolved critical frontend issues and merged successfully' },
   { platform: 'SQUERIQUEST CTF', value: 'Top 30', sub: 'CTF at IIIT Lucknow' },
   { platform: 'JEE ADVANCED', value: '2025', sub: 'Cleared - JEE Main 1.9 percentile' }
 ];
