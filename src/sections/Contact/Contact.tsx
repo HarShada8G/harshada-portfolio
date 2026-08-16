@@ -65,7 +65,7 @@ export const Contact: React.FC = () => {
                 <Code className="w-5 h-5" />
                 GITHUB
               </a>
-              <a href="https://linkedin.com/in/harshada-ghube" target="_blank" rel="noreferrer" className="glass-panel px-6 py-3 hover:border-[var(--arch-cyan)] transition-colors flex items-center gap-2">
+              <a href="https://www.linkedin.com/in/harshada-ghube-5302a0381/" target="_blank" rel="noreferrer" className="glass-panel px-6 py-3 hover:border-[var(--arch-cyan)] transition-colors flex items-center gap-2">
                 <Briefcase className="w-5 h-5" />
                 LINKEDIN
               </a>
