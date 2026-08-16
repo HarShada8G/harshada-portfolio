@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const COMP_STATS = [
-  { platform: 'CODEFORCES', value: '871', sub: 'Newbie - 100+ problems solved' },
-  { platform: 'CODECHEF', value: '1423', sub: '2★ rating - 400+ problems solved' },
-  { platform: 'LEETCODE', value: 'harshe008', sub: 'DSA across data structures & DP' },
+  { platform: 'CODEFORCES', value: '871', sub: 'Newbie - max rating 909' },
+  { platform: 'CODECHEF', value: '1423', sub: '2★ rating - 450+ problems solved' },
+  { platform: 'LEETCODE', value: 'Harshe008', sub: 'DSA across data structures & DP' },
   { platform: 'TOTAL PROBLEMS SOLVED', value: '500+', sub: 'Across competitive platforms' },
-  { platform: "GSSOC '26", value: 'Top 3%', sub: '14+ PRs & reviews, open-source' },
-  { platform: 'SQUERIQUEST CTF', value: 'Top 20', sub: 'CTF at IIIT Lucknow' },
+  { platform: "GSSOC '26", value: 'Top 2%', sub: '40+ PRs & reviews, open-source' },
+  { platform: 'SQUERIQUEST CTF', value: 'Top 30', sub: 'CTF at IIIT Lucknow' },
   { platform: 'JEE ADVANCED', value: '2025', sub: 'Cleared - JEE Main 1.9 percentile' }
 ];
 
