@@ -63,7 +63,7 @@ export const Projects: React.FC = () => {
               className={`relative glass-panel p-6 cursor-pointer group border ${gamerMode ? 'hover:border-[var(--alert-coral)]' : 'hover:border-[var(--arch-cyan)]'} transition-colors overflow-hidden`}
               onClick={() => setSelectedQuest(quest)}
             >
-              {/* Scanline effect on hover */}
+              {/* Scanline effect on a hover */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--arch-cyan)] to-transparent opacity-0 group-hover:opacity-10 group-hover:-translate-y-full group-hover:animate-[scanline_1.5s_linear_infinite]" />
 
               <div className="flex justify-between items-start mb-4">
