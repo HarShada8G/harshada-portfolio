@@ -35,7 +35,7 @@ export const Skills: React.FC = () => {
                     <span>Windows / Linux</span>
                     
                     <span className="text-[var(--arch-cyan)] font-bold">KERNEL</span>
-                    <span>C++ / C / Bash</span>
+                    <span>C++ / C </span>
                     
                     <span className="text-[var(--arch-cyan)] font-bold">SHELL</span>
                     <span>Bash</span>
